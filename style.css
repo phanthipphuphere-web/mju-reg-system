@@ -1,0 +1,1674 @@
+/* ==========================================================================
+   Maejo University Educational Services System - Modern Responsive CSS
+   Theme: MJU Forest Green (#005a2b) & Gold (#d4af37)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #005a2b;
+  --primary-dark: #003d1d;
+  --primary-light: #e6f0eb;
+  --accent-color: #d4af37;
+  --bg-color: #f8faf9;
+  --card-bg: #ffffff;
+  --text-main: #2b302c;
+  --text-muted: #667068;
+  --border-color: #e2e8e4;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --transition: all 0.25s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Sarabun', -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: calc(100% - 2rem);
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* Header */
+.main-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  color: #ffffff;
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-badge {
+  background: var(--accent-color);
+  color: #111;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+
+.brand-text h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.brand-text span {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.88rem;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Navigation */
+.main-nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+  font-weight: 600;
+}
+
+/* Layout Grid */
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-block: 2rem;
+  flex: 1;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 1.2em;
+  background-color: var(--accent-color);
+  border-radius: 3px;
+}
+
+/* Cards & Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #e2e8e4;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-tag {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Sidebar */
+.sidebar-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-box h3 {
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+.quick-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.quick-menu a {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--text-main);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-color);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.quick-menu a:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  padding-left: 1rem;
+}
+
+/* Table */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.custom-table th {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 0.85rem 1rem;
+}
+
+.custom-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Footer */
+.main-footer {
+  background-color: var(--primary-dark);
+  color: #d1e0d7;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+/* Responsive Queries */
+@media (min-width: 768px) {
+  .header-container { flex-direction: row; justify-content: space-between; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .layout-grid { grid-template-columns: 3fr 1fr; }
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+/* กำหนดฟอนต์ทั้งหน้าเว็บ */
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* แต่งกล่องให้ขอบมน + มีเงา */
+.sidebar-box, .table-responsive {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* แต่งตารางให้เรียบหรู + เอฟเฟกต์ชี้เมาส์ */
+tr:hover {
+    background-color: #f1f5f9;
+    transition: background 0.2s ease;
+}
+
+/* ป้ายสถานะเกรด/ปกติ (Badge) */
+.badge-status {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+/* Custom Properties / Theme Variables */
+:root {
+    --primary-color: #0b4d2c;      /* เขียวเข้มพรีเมียม */
+    --primary-hover: #083820;
+    --accent-color: #2ec4b6;       /* สีฟ้าอมเขียวเพิ่มมิติ */
+    --accent-gold: #e9c46a;        /* สีทองนุ่มนวล */
+    --bg-light: #f4f7f5;           /* พื้นหลังเทาอมเขียวอ่อนสบายตา */
+    --card-bg: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    --radius-lg: 16px;
+    --radius-md: 10px;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sarabun', 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Section */
+.main-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #155d38 100%);
+    color: #ffffff;
+    padding: 24px 0;
+    box-shadow: var(--shadow-md);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-badge {
+    background: var(--accent-gold);
+    color: #1a3323;
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(233, 196, 106, 0.3);
+}
+
+.brand-text h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.brand-text span {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* User Badge */
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 8px 16px;
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+    background: var(--accent-gold);
+    color: #1a3323;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.user-id {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* Navigation Bar */
+.main-nav {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 16px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background: #f0f7f3;
+}
+
+/* Layout & Grid Structure */
+.layout-grid {
+    padding: 40px 20px;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 24px;
+    background: var(--accent-gold);
+    border-radius: 4px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+/* Modern Card Styling */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-image-placeholder {
+    height: 180px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-end;
+    color: #ffffff;
+    position: relative;
+}
+
+.primary-banner {
+    background: linear-gradient(135deg, #0b4d2c 0%, #1c7c48 100%);
+}
+
+.secondary-banner {
+    background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+}
+
+.tertiary-banner {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.card-image-placeholder h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.card-content {
+    padding: 24px;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.badge-academic {
+    background: #e6f4ea;
+    color: #137333;
+}
+
+.badge-finance {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.badge-general {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Responsive Breakpoints (ตรงตามโจทย์) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .nav-menu {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Sarabun:wght@400;500;600&display=swap');
+
+:root {
+    --bg-main: #f8fafc;
+    --surface: #ffffff;
+    --primary: #0f172a;       /* สีกรมท่าเกือบดำ ลุคโมเดิร์น */
+    --brand-green: #10b981;  /* เขียว Emerald สดใสแบบเรียบหรู */
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sarabun', 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header Minimal */
+.main-header {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-badge {
+    background-color: #ecfdf5;
+    color: var(--brand-green);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid #a7f3d0;
+}
+
+.brand-text h1 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.brand-text span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Profile Badge */
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-main);
+    padding: 6px 14px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.user-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.user-id {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* Nav Menu Clean */
+.main-nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 14px 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link.active {
+    color: var(--brand-green);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--brand-green);
+}
+
+/* Card Section Modern Grid */
+.layout-grid {
+    padding: 32px 24px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.card-image-placeholder {
+    height: 120px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-end;
+    background: #f1f5f9;
+}
+
+.card-image-placeholder h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.badge-academic { background: #f0fdf4; color: #15803d; }
+.badge-finance { background: #fffbeb; color: #b45309; }
+.badge-general { background: #f0f9ff; color: #0369a1; }
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.card-description {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&family=Sarabun:wght@400;500;600;700&display=swap');
+
+:root {
+    --green-primary: #044b29;      /* เขียวแม่โจ้เข้ม พรีเมียม */
+    --green-light: #0d6e3e;        /* เขียวสว่างสำหรับไล่เฉด */
+    --green-soft: #f0fdf4;         /* เขียวอ่อนพาสเทลสำหรับพื้นหลัง */
+    
+    --yellow-gold: #eab308;        /* เหลืองทองสดใส */
+    --yellow-soft: #fef9c3;        /* เหลืองพาสเทลสำหรับ Badge */
+    
+    --bg-main: #f8fafc;            /* ขาวนุ่มตา */
+    --surface: #ffffff;            /* ขาวบริสุทธิ์ */
+    --text-dark: #0f172a;          /* ตัวหนังสือเข้ม */
+    --text-muted: #64748b;        /* ตัวหนังสือจาง */
+    --border: #e2e8f0;            /* เส้นขอบบางๆ */
+    
+    --radius-lg: 16px;
+    --radius-md: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sarabun', 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header สีเขียวตัดแถบเหลืองทอง */
+.main-header {
+    background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-light) 100%);
+    color: #ffffff;
+    padding: 22px 0;
+    border-bottom: 4px solid var(--yellow-gold);
+    box-shadow: 0 4px 20px rgba(4, 75, 41, 0.15);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-badge {
+    background: var(--yellow-gold);
+    color: var(--green-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.brand-text h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.brand-text span {
+    font-size: 0.8rem;
+    color: #e2e8f0;
+    opacity: 0.9;
+}
+
+/* User Profile Badge */
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+    background: var(--yellow-gold);
+    color: var(--green-primary);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.user-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.user-id {
+    font-size: 0.72rem;
+    color: #cbd5e1;
+}
+
+/* Nav Menu สีขาวคลีน ตัดเส้นเน้นสีเขียว */
+.main-nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 12px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 16px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--green-primary);
+}
+
+.nav-link.active {
+    color: var(--green-primary);
+    border-bottom-color: var(--green-primary);
+    background: var(--green-soft);
+}
+
+/* Main Section */
+.layout-grid {
+    padding: 36px 20px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--green-primary);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 22px;
+    background: var(--yellow-gold);
+    border-radius: 4px;
+}
+
+/* Cards Design (ขาว / เขียว / เหลือง) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -4px rgba(4, 75, 41, 0.08);
+    border-color: #a7f3d0;
+}
+
+.card-image-placeholder {
+    height: 140px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    color: #ffffff;
+}
+
+.primary-banner {
+    background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-light) 100%);
+    border-bottom: 3px solid var(--yellow-gold);
+}
+
+.secondary-banner {
+    background: linear-gradient(135deg, #ca8a04 0%, var(--yellow-gold) 100%);
+    color: var(--green-primary);
+}
+
+.tertiary-banner {
+    background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+    border-bottom: 3px solid var(--yellow-gold);
+}
+
+.card-image-placeholder h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.badge-academic { background: var(--green-soft); color: var(--green-primary); }
+.badge-finance { background: var(--yellow-soft); color: #854d0e; }
+.badge-general { background: #f1f5f9; color: var(--text-dark); }
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&family=Sarabun:wght@400;500;600;700&display=swap');
+
+:root {
+    --green-mju: #044b29;          /* เขียวเข้มแม่โจ้คงเดิม */
+    --green-mju-hover: #086338;
+    
+    --blue-soft-bg: #f0f7ff;       /* ฟ้าอ่อนพาสเทลสำหรับพื้นหลังส่วนรอง */
+    --blue-ice: #e0f2fe;           /* ฟ้าอ่อนสว่างสำหรับ Badge/Highlight */
+    --blue-accent: #0284c7;        /* สีฟ้าสำหรับตัวหนังสือป้ายกำกับ */
+    --gold-accent: #eab308;        /* สีทองคงไว้เล็กน้อยตัดขอบ */
+    
+    --bg-main: #f8fafc;            /* พื้นหลังหลักขาวสะอาดตา */
+    --surface: #ffffff;            /* ขาวบริสุทธิ์ */
+    --text-dark: #0f172a;          /* ตัวหนังสือเข้มอ่านง่าย */
+    --text-muted: #64748b;        /* ตัวหนังสือสีเทา */
+    --border: #e2e8f0;            /* เส้นขอบบางๆ */
+    
+    --radius-lg: 14px;
+    --radius-md: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sarabun', 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header เขียวแม่โจ้ แบบมีเส้นตัดฟ้าอ่อนด้านล่าง */
+.main-header {
+    background: linear-gradient(135deg, var(--green-mju) 0%, #085e35 100%);
+    color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 3px solid #38bdf8; /* แถบเส้นสีฟ้าอ่อนเพิ่มความโมเดิร์น */
+    box-shadow: 0 4px 12px rgba(4, 75, 41, 0.12);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-badge {
+    background: var(--gold-accent);
+    color: var(--green-mju);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+}
+
+.brand-text h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.brand-text span {
+    font-size: 0.8rem;
+    color: #e2e8f0;
+}
+
+/* User Profile Badge โทนฟ้าอ่อนสว่าง */
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 50px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--gold-accent);
+    color: var(--green-mju);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.user-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.user-id {
+    font-size: 0.72rem;
+    color: #cbd5e1;
+}
+
+/* Navigation Bar ปรับเป็นโทนฟ้าอ่อน-เขียว */
+.main-nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 14px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover {
+    color: var(--green-mju);
+    background: var(--blue-soft-bg);
+}
+
+.nav-link.active {
+    color: var(--green-mju);
+    border-bottom-color: var(--green-mju);
+    background: var(--blue-soft-bg); /* พื้นหลังฟ้าอ่อนในเมนูที่เปิดอยู่ */
+}
+
+/* Layout Grid */
+.layout-grid {
+    padding: 36px 20px;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--green-mju);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 22px;
+    background: #0ea5e9; /* แถบสีฟ้าหน้าหัวข้อ */
+    border-radius: 4px;
+}
+
+/* Card Styling ผสมเขียว-ฟ้า */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.25 ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(2, 132, 199, 0.08);
+    border-color: #38bdf8;
+}
+
+.card-image-placeholder {
+    height: 130px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    color: #ffffff;
+}
+
+/* Gradient แบนเนอร์การ์ด โทนเขียวแม่โจ้ตัดฟ้า */
+.primary-banner {
+    background: linear-gradient(135deg, var(--green-mju) 0%, #0369a1 100%);
+}
+
+.secondary-banner {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+}
+
+.tertiary-banner {
+    background: linear-gradient(135deg, #0f766e 0%, #0284c7 100%);
+}
+
+.card-image-placeholder h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* Badges โทนฟ้าพาสเทลสดใส */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.badge-academic { background: #f0fdf4; color: var(--green-mju); }
+.badge-finance { background: var(--blue-ice); color: var(--blue-accent); }
+.badge-general { background: #f1f5f9; color: var(--text-dark); }
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&family=Sarabun:wght@400;500;600;700&display=swap');
+
+:root {
+    --green-mju: #044b29;          /* เขียวเข้มแม่โจ้ */
+    --green-mju-hover: #086338;
+    
+    --blue-menu-bg: #e0f2fe;       /* โทนฟ้าอ่อนสว่างเฉพาะแถบเมนู */
+    --blue-soft-bg: #f0f9ff;       
+    --blue-accent: #0369a1;        /* สีฟ้าเข้มอ่านง่าย */
+    --gold-accent: #f59e0b;        
+    
+    --bg-main: #f8fafc;            /* พื้นหลังขาวนุ่มตา */
+    --surface: #ffffff;            /* ขาวบริสุทธิ์ */
+    --text-dark: #0f172a;          /* ตัวหนังสือเข้ม ชัดเจน อ่านง่าย */
+    --text-muted: #475569;        /* เทาเข้มอ่านสบายตา */
+    --border: #cbd5e1;            /* เส้นขอบชัดเจนขึ้น */
+    
+    --radius-lg: 12px;
+    --radius-md: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sarabun', 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header เขียวแม่โจ้ */
+.main-header {
+    background: var(--green-mju);
+    color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-badge {
+    background: #ffffff;
+    color: var(--green-mju);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand-text h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.brand-text span {
+    font-size: 0.8rem;
+    color: #f1f5f9;
+}
+
+/* User Profile Badge */
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 16px;
+    border-radius: 50px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    color: var(--green-mju);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.user-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.user-id {
+    font-size: 0.72rem;
+    color: #e2e8f0;
+}
+
+/* Navigation Bar ปรับสไตล์ใหม่ให้โดดเด่นแบบโทนฟ้าอ่อน */
+.main-nav {
+    background: var(--blue-menu-bg);
+    border-bottom: 2px solid #0284c7;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding: 6px 0;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--blue-accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    background: #bae6fd;
+    color: #0369a1;
+}
+
+.nav-link.active {
+    background: var(--green-mju);
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(4, 75, 41, 0.2);
+}
+
+/* Layout Grid */
+.layout-grid {
+    padding: 36px 20px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--green-mju);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 22px;
+    background: var(--green-mju);
+    border-radius: 4px;
+}
+
+/* Card Styling เน้น คอนทราสต์อ่านง่าย */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--green-mju);
+}
+
+.card-image-placeholder {
+    height: 120px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* ปรับสีพื้นหลังการ์ดให้ตัวอักษรสีขาวอ่านออกชัดเจน 100% */
+.primary-banner {
+    background: #044b29; /* เขียวเข้ม */
+}
+
+.secondary-banner {
+    background: #0369a1; /* ฟ้าเข้ม */
+}
+
+.tertiary-banner {
+    background: #0f766e; /* เขียวอมฟ้าเข้ม */
+}
+
+.card-image-placeholder h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff; /* ตัวหนังสือขาว ชัดเจน ไม่กลืน */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* Badges คอนทราสต์สูง อ่านง่าย */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.badge-academic { background: #dcfce7; color: #14532d; }
+.badge-finance { background: #e0f2fe; color: #0369a1; }
+.badge-general { background: #f1f5f9; color: #334155; }
+
+.card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
